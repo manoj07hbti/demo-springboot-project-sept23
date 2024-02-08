@@ -10,12 +10,12 @@ import java.util.ArrayList;
 @RestController
 public class CountryCRUD {
     ArrayList<String> countries=new ArrayList<>();
-    @RequestMapping("country_add/{countryName}")//http://localhost:PORT_NUMBER/ENDPOINT_NAME
+    @RequestMapping("/country_add/{countryName}")//http://localhost:PORT_NUMBER/ENDPOINT_NAME
     public String add(@PathVariable String  countryName) {
         countries.add(countryName);
         return countryName+" Country Name Added Successfully!";
     }
-    @RequestMapping("country_get")
+    @RequestMapping("/country_get")
     public ArrayList<String> getCountries(){
         return countries;
     }

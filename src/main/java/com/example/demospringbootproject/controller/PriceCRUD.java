@@ -14,7 +14,7 @@ public class PriceCRUD {
      prices.add(price);
      return price+" Price Added Successfully!";
     }
-    @RequestMapping("prices")
+    @RequestMapping("/prices")
     public ArrayList<Double>getPrices(){
         return prices;
     }
