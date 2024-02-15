@@ -23,6 +23,13 @@ public class EmployeeController {
 
     }
 
+    @PostMapping("/add_employee")
+    public String addEmployee(@RequestBody Employee employee){
+        employees.add(employee);
+        return "Employee Added Successfully...";
+    }
+
+
     //R
     @GetMapping("get_all_emp")
     public ArrayList<Employee> getEmployees(){
