@@ -1,15 +1,12 @@
 package com.example.demospringbootproject.controller;
 import com.example.demospringbootproject.model.Student;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 @RestController
 public class StudentCRUD {
    ArrayList<Student> students=new ArrayList<>();
-   @RequestMapping("/add_student/{name}/{age}/{id}/{email}")
+   @PostMapping("/add_student/{name}/{age}/{id}/{email}")
    public String add(@PathVariable String name,
                      @PathVariable int age,
                      @PathVariable int id,
@@ -19,17 +16,17 @@ public class StudentCRUD {
        return "Student Added Successfully...";
 
    }
-   @RequestMapping("/get_student")
+   @GetMapping("/get_student")
    public  ArrayList<Student>getStudents(){
        return students;
     }
-    @RequestMapping("/update_studentName")
+    @PutMapping("/update_studentName")
     public String update(@RequestParam String newName,@RequestParam int index){
        Student student=students.get(index);
        student.setName(newName);
        return "Student Name updated Successfully...";
     }
-    @RequestMapping("/delete_student")
+    @DeleteMapping("/delete_student")
     public String delete(@RequestParam int index){
        students.remove(index);
        return "Student Name Deleted Successfully...";
