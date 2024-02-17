@@ -1,4 +1,4 @@
-package com.example.demospringbootproject.controller;
+package com.example.demospringbootproject.controller.requestparam;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,7 +9,7 @@ public class ArmstrongController {
 @RequestMapping("/Armstrong_Check")
     public String ArmstrongCheck(@RequestParam int num,@RequestParam int arm, @RequestParam int rem, @RequestParam int c){
 
-    arm=10;
+    arm=101;
 while (num>0){
 
     rem =num%10;
