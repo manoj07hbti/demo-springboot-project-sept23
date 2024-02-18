@@ -11,9 +11,9 @@ public class ArmstrongNumber {
     public String armstrong(@PathVariable int num){
 
         int originalnumber = num;
-        int sum = 0;
+        int sum=0;
         while (num > 0){
-            int rem=num%10;
+           int rem=num%10;
             sum=sum+(rem*rem*rem);
             num=num/10;
 
