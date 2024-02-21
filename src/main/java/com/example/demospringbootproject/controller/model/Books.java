@@ -1,4 +1,4 @@
-package com.example.demospringbootproject.model;
+package com.example.demospringbootproject.controller.model;
 
 public class Books {
     public String name;

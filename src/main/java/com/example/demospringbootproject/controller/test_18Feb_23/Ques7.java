@@ -1,12 +1,11 @@
 package com.example.demospringbootproject.controller.test_18Feb_23;
 
-import com.example.demospringbootproject.model.Books;
-import com.example.demospringbootproject.model.Employee;
+import com.example.demospringbootproject.controller.model.Books;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
-
+@RestController
 public class Ques7 {
     /*Write a CRUD for Book in a Library ,Book will have Name, Subject and writer,
     allocationStatus : YES or NO ,  we need to create one more end point to allocate a book ,
@@ -45,9 +44,9 @@ public class Ques7 {
     @GetMapping("/availableBooks")
     public ArrayList<Books> getAvailableBooks() {
         ArrayList<Books> availableBooks = new ArrayList<>();
-        for (int i = 0; i < books.size(); i++) {
-            if (books.get(i).getAllocationStatus().equals("NO")) {
-                availableBooks.add(books.get(i));
+        for (Books book : books) {
+            if (book.getAllocationStatus().equals("NO")) {
+                availableBooks.add(book);
             }
         }
         return availableBooks;
