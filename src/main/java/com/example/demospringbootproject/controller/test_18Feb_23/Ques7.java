@@ -44,7 +44,8 @@ public class Ques7 {
     @GetMapping("/availableBooks")
     public ArrayList<Books> getAvailableBooks() {
         ArrayList<Books> availableBooks = new ArrayList<>();
-        for (Books book : books) {
+        for (int i = 0; i < books.size(); i++) {
+            Books book = books.get(i);
             if (book.getAllocationStatus().equals("NO")) {
                 availableBooks.add(book);
             }
