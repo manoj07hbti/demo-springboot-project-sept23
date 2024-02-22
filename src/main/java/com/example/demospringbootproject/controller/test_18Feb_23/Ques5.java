@@ -15,7 +15,7 @@ public class Ques5 {
             return false;
         }
         for (int i = 2; i < num; i++) {
-            if (i % num == 0) {
+            if (num % i == 0) {
                 System.out.println(" The number " + num + " is not prime");
                 return false;
             }

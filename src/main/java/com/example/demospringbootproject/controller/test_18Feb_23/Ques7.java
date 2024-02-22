@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
+
 @RestController
 public class Ques7 {
     /*Write a CRUD for Book in a Library ,Book will have Name, Subject and writer,
@@ -16,6 +17,7 @@ public class Ques7 {
     they will have allocationStatus as YES
      */
     ArrayList<Books> books = new ArrayList<>();
+
     @PostMapping("/create_books")
     public String createBook(@RequestBody Books book) {
         books.add(book);
@@ -63,5 +65,34 @@ public class Ques7 {
             }
         }
         return allocatedBooks;
+    }
+
+    // Update book details
+    @PutMapping("/update_book")
+    public String updateBook(@RequestParam String name, @RequestBody Books updatedBook) {
+        for (int i = 0; i < books.size(); i++) {
+            Books book = books.get(i);
+            if (book.getName().equals(name)) {
+                book.setSubject(updatedBook.getSubject());
+                book.setWriter(updatedBook.getWriter());
+                book.setAllocationStatus(updatedBook.getAllocationStatus());
+
+                return "Book details updated successfully";
+            }
+        }
+        return "Book not found";
+    }
+
+    // Remove a book
+    @DeleteMapping("/remove_book")
+    public String removeBook(@RequestParam String name) {
+        for (int i = 0; i < books.size(); i++) {
+            Books book = books.get(i);
+            if (book.getName().equals(name)) {
+                books.remove(i);
+                return "Book removed successfully";
+            }
+        }
+        return "Book not found";
     }
 }
