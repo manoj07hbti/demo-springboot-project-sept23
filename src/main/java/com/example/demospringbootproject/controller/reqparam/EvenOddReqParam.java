@@ -1,4 +1,4 @@
-package com.example.demospringbootproject.reqparam;
+package com.example.demospringbootproject.controller.reqparam;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

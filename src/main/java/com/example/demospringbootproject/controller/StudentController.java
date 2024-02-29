@@ -1,6 +1,6 @@
 package com.example.demospringbootproject.controller;
 
-import com.example.demospringbootproject.controller.model.StudentNew;
+import com.example.demospringbootproject.model.StudentNew;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

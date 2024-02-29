@@ -1,4 +1,4 @@
-package com.example.demospringbootproject.controller.model;
+package com.example.demospringbootproject.model;
 
 public class Employee {
     String name;

@@ -1,6 +1,6 @@
 package com.example.demospringbootproject.controller.test_18Feb_23;
 
-import com.example.demospringbootproject.controller.model.Books;
+import com.example.demospringbootproject.model.Books;
 import org.springframework.web.bind.annotation.*;
 
 
