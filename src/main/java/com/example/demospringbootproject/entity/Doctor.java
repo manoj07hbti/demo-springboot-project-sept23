@@ -20,6 +20,22 @@ public class Doctor {
     public Doctor() {
     }
 
+    public Doctor(long id, String name, String specialization, String dept, int yearsOfExperience) {
+        Id = id;
+        this.name = name;
+        this.specialization = specialization;
+        this.dept = dept;
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
+    }
+
     public String getName() {
         return name;
     }

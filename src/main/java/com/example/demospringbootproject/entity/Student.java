@@ -9,43 +9,60 @@ public class Student {
     @GeneratedValue
     long Id;
 
-    String Name;
-    int Age;
-    int RollNo;
-    String Stream;
+    String name;
+    int age;
+    int rollNo;
+    String stream;
 
     public Student() {
     }
 
+    public Student(long id, String name, int age, int rollNo, String stream) {
+        Id = id;
+        this.name = name;
+        this.age = age;
+        this.rollNo = rollNo;
+        this.stream = stream;
+    }
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
+    }
+
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
     public int getRollNo() {
-        return RollNo;
+        return rollNo;
     }
 
     public void setRollNo(int rollNo) {
-        RollNo = rollNo;
+        this.rollNo = rollNo;
     }
 
     public String getStream() {
-        return Stream;
+        return stream;
     }
 
     public void setStream(String stream) {
-        Stream = stream;
+        this.stream = stream;
     }
 }
+
