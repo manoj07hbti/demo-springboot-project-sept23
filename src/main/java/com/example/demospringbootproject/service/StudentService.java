@@ -4,6 +4,8 @@ import com.example.demospringbootproject.entity.Student;
 import com.example.demospringbootproject.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.List;
 
@@ -29,5 +31,23 @@ public class StudentService {
     public Student getStudentById(Long id){
 
         return repository.getById(id); // select * from table where id=?
+    }
+
+    public String updateName( String name,long id){
+       // find the record
+       Student student= repository.getById(id);// select * from table where id=?
+      //update name
+        student.setName(name);
+      //save back to database
+      repository.save(student);
+
+      return "Name Update Successfully as :"+name;
+    }
+
+    public String removeStudent( long id){
+
+        repository.deleteById(id);
+
+        return "Record deleted successfully...";
     }
 }
