@@ -23,4 +23,16 @@ public class StudentService {
     public Student getStudentById(Long id){
         return repository.getById(id);
     }
+
+    public String updateName(String name,long id){
+        Student student=repository.getById(id);
+        student.setName(name);
+        repository.save(student);
+        return "Name Updated Successfully.."+name;
+
+    }
+    public String removeStudent(long id){
+        repository.deleteById(id);
+        return "Record deleted Successfully...";
+    }
 }

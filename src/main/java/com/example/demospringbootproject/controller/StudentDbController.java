@@ -27,4 +27,14 @@ public class StudentDbController {
         return service.getStudentById(id);
     }
 
+    @PutMapping("/update_name/{name}/{id}")
+    public String updateName(@PathVariable String name,@PathVariable long id){
+
+        return service.updateName(name,id);
+    }
+    @DeleteMapping("/remove_student/{id}")
+    public  String removeStudent(@PathVariable long id){
+        return service.removeStudent(id);
+    }
+
 }

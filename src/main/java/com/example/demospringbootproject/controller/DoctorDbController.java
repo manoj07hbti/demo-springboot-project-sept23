@@ -27,6 +27,16 @@ public class DoctorDbController {
         return service.getDoctorById(id);
 
     }
+    @PutMapping("/update_doctor_name/{name}/{id}")
+    public String updateDoctorName(@PathVariable String name,@PathVariable long id){
+        return  service.updateName(name,id);
+
+    }
+    @DeleteMapping("/remove_doctor/{id}")
+    public String removeDoctor(@PathVariable long id){
+        return service.removeDoctor(id);
+
+    }
 
 
 }

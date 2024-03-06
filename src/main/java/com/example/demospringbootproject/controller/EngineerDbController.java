@@ -24,5 +24,12 @@ public class EngineerDbController {
         return service.getEngineerById(RollNo);
 
     }
-
+    @PutMapping("/update_engineer_name/{name}/{id}")
+    public String updateEngineerName(@PathVariable String name,@PathVariable long id){
+        return service.updateName(name,id);
+    }
+    @DeleteMapping("/remove_engineer/{id}")
+    public String removeEngineer(@PathVariable long id){
+        return service.removeEngineer(id);
+    }
 }
