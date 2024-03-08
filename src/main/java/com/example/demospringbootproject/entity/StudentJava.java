@@ -1,9 +1,12 @@
 package com.example.demospringbootproject.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@JsonSerialize
 @Entity
 public class StudentJava
 {
@@ -16,7 +19,13 @@ public class StudentJava
 
     public StudentJava()
     {
+    }
 
+    public StudentJava(long registration, String name, int rollno, String course) {
+        this.registration = registration;
+        this.name = name;
+        this.rollno = rollno;
+        this.course = course;
     }
 
     public long getRegistration() {
