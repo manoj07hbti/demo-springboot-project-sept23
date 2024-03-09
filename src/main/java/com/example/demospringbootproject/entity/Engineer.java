@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="Engineer")
 public class Engineer
 {
     @Id
@@ -20,6 +20,8 @@ public class Engineer
     {
 
     }
+
+
 
     public long getId() {
         return id;
