@@ -50,4 +50,16 @@ public class StudentService {
 
         return "Record deleted successfully...";
     }
+
+    public Student getStudentByName(String name){
+
+       // return repository.findByName(name); // select * from table where name=?
+
+        return repository.findSQL(name);
+    }
+    public Student getStudentByNameAndId(long id, String name){
+
+        return repository.findByIdAndName(id,name); // select * from table where name=?
+    }
+
 }

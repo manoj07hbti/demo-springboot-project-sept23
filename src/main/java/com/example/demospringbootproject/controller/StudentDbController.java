@@ -47,4 +47,14 @@ public class StudentDbController {
 
         return service.removeStudent(id);
     }
+
+    @GetMapping("/find_by_name")
+    public Student findStudentByName(@RequestParam String name){
+        return service.getStudentByName(name);// select * from table where name=?
+    }
+
+    @GetMapping("/find_by_id_name")
+    public Student findStudentByName(@RequestParam String name,@RequestParam long id){
+        return service.getStudentByNameAndId(id,name);// select * from table where name=? and id=?
+    }
 }
