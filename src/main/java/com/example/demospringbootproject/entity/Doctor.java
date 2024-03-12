@@ -9,7 +9,7 @@ public class Doctor {
 
     @Id
     @GeneratedValue
-    long Id;
+    long id;
 
 
     String name;
@@ -21,7 +21,7 @@ public class Doctor {
     }
 
     public Doctor(long id, String name, String specialization, String dept, int yearsOfExperience) {
-        Id = id;
+        this.id = id;
         this.name = name;
         this.specialization = specialization;
         this.dept = dept;
@@ -29,11 +29,11 @@ public class Doctor {
     }
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {

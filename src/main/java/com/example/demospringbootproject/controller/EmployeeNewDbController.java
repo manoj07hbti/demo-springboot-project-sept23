@@ -49,5 +49,18 @@ public class EmployeeNewDbController {
         return service.removeEmployee(id);
 
     }
+    @GetMapping("/find_by_id")
+    public EmployeeNew findEmployeeById(@RequestParam long id){
+        return service.getEmployeeById(id);
+    }
+    @GetMapping("/find_by_name")
+    public EmployeeNew findEmployeeByName(@RequestParam String name){
+        return  service.getEmployeeByName(name);
+
+    }
+    @GetMapping("/find_by_city_name")
+    public  EmployeeNew findEmployeeByCityAndName(@RequestParam String city,@RequestParam String name){
+        return  service.getEmployeeByCityAndName(city, name);
+    }
 
 }

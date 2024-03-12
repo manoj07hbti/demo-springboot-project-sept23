@@ -36,5 +36,20 @@ public class DoctorService {
         return "Record deleted Successfully..";
 
     }
+    public Doctor getDoctorByName(String name){
+        return repository.findByName(name);
+    }
+    public Doctor getDoctorBySpecialization(String specialization){
+        return repository.findBySpecialization(specialization);
+    }
+    public Doctor getDoctorByNameAndSpecialization(String name,String specialization){
+        return repository.findByNameAndSpecialization(name,specialization);
+    }
+    public Doctor getDoctorByIdAndSpecialization(long id,String specialization) {
+        return repository.findByIdAndSpecialization(id, specialization);
+    }
+    public Doctor getDoctorByIdAndName(long id,String name) {
+        return repository.findByIdAndName(id, name);
+    }
 
     }

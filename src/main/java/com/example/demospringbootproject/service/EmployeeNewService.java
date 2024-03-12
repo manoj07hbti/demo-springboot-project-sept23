@@ -51,4 +51,14 @@ public class EmployeeNewService {
         repository.deleteById(id);
         return "Employee Record Deleted Successfully..";
     }
+    public EmployeeNew getEmployeeById(long id){
+
+        return repository.findById(id);
+    }
+    public EmployeeNew getEmployeeByName(String name){
+        return  repository.findByName(name);
+    }
+    public EmployeeNew getEmployeeByCityAndName(String city,String name){
+        return repository.findByCityAndName(city, name);
+    }
 }

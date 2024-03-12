@@ -37,6 +37,27 @@ public class DoctorDbController {
         return service.removeDoctor(id);
 
     }
+    @GetMapping("/find_by_name/{name}")
+    public Doctor findDoctorByName(@PathVariable String name){
+        return service.getDoctorByName(name);
+    }
+    @GetMapping("/find_by_specialization/{specialization}")
+    public Doctor findDoctorBySpecialization(@PathVariable String specialization){
+        return service.getDoctorBySpecialization(specialization);
+    }
+    @GetMapping("/find_by_name_specialization/{name}/{specialization}")
+    public Doctor findDoctorByNameAndSpecialization(@PathVariable String name,@PathVariable String specialization){
+        return service.getDoctorByNameAndSpecialization(name,specialization);
+    }
+    @GetMapping("/find_by_id_specialization")
 
+    public Doctor findDoctorByIdAndSpecialization(@RequestParam long id,@RequestParam String specialization) {
+        return service.getDoctorByIdAndSpecialization(id,specialization);
+    }
+    @GetMapping("/find_by_id_name")
+
+    public Doctor findDoctorByIdAndName(@RequestParam long id,@RequestParam String name) {
+        return service.getDoctorByIdAndName(id,name);
+    }
 
 }
