@@ -25,7 +25,7 @@ public class EmployeeController {
         return service.readEmployee();
     }
 
-
+//  Find employee by Id
     @GetMapping("/read_employeeId")
     public Employee_Entity readEmployeeById(@RequestParam Long id) {
         return service.readEmployeeById(id);
@@ -51,5 +51,19 @@ public class EmployeeController {
     @DeleteMapping("/delete_employee")
     public String delete( @RequestParam long id) {
         return service.delete(id);
+    }
+
+
+    // Find employee by Name
+    @GetMapping("/read_name")
+    public Employee_Entity getByName(@RequestParam String name){
+        return service.getByName(name);
+    }
+
+    // Find employee by name and city
+
+    @GetMapping("/read_name_city")
+    public Employee_Entity getByNameAndCity(@RequestParam String name,@RequestParam String city){
+        return service.getByNameAndCity(name,city);
     }
 }

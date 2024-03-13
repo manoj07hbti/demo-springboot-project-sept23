@@ -25,6 +25,7 @@ public class EmployeeService {
         return repository.findAll();
     }
 
+    // Find employee by Id
     public Employee_Entity readEmployeeById(Long id) {
         return repository.getById(id);
     }
@@ -58,6 +59,18 @@ public class EmployeeService {
     public String delete( @RequestParam long id) {
         repository.deleteById(id);
         return "Deleted successfully";
+    }
+
+    // Find employee by name
+
+    public Employee_Entity getByName(String name){
+        return repository.findByName(name);
+    }
+
+    // Find employee by name and city
+
+    public Employee_Entity getByNameAndCity(String name,String city){
+        return repository.findByNameAndCity(name,city);
     }
 }
 

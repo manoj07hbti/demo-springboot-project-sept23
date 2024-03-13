@@ -8,4 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee_Entity,Long > {
+
+    public Employee_Entity findByName(String name);
+
+    public Employee_Entity findByNameAndCity(String name,String city);
 }
