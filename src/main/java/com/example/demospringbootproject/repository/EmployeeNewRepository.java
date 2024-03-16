@@ -1,11 +1,10 @@
 package com.example.demospringbootproject.repository;
-
-import com.example.demospringbootproject.entity.StudentJava;
+import com.example.demospringbootproject.entity.EmployeeNew;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepository extends JpaRepository<StudentJava, Long>
+public interface EmployeeNewRepository extends JpaRepository<EmployeeNew, Long>
 {
 
 }
