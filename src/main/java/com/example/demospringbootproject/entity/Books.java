@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="Library_Management")
+@Entity(name = "LIBRARY_MANAGEMENT")
 public class Books {
     @Id
     @GeneratedValue
